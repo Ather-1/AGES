@@ -1,0 +1,125 @@
+.site-header {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.header-box {
+    background-color: var(--bg-light);
+    padding: 1.2rem 2rem;
+    border-radius: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.header-box img {
+    height: 5rem;
+    width: auto;
+    cursor: pointer;
+}
+
+.main-nav {
+    display: flex;
+    gap: 3rem;
+}
+.main-nav a {
+    color: var(--dark);
+    position: relative;
+    transition: width 0.3s ease,
+                color 0.3s ease;
+            }
+.main-nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--hover);
+    transition: width 0.3s ease;
+
+}
+.main-nav a:hover {color: var(--hover);}
+.main-nav a:hover::before {
+    width: 100%;
+}
+
+.menu-btns {
+    display: none;
+    font-size: 2.8rem;
+    cursor: pointer;
+}
+.close-menu {display: none;}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+    .LRP {
+        max-width: 1200px;
+    }
+    .header-box {
+        padding: 1rem 1.6rem;
+        border-radius: 5rem;
+    }
+
+    .header-box img {height: 4rem;}
+
+    .main-nav {gap: 2.5rem;}
+    .main-nav a {font-size: 1.5rem;}
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+    .site-header {
+        top: 2rem;
+    }
+    .main-nav {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: var(--bg-light);
+        position: fixed;
+        top: 8rem;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        flex-direction: column;
+        padding: 10rem 4rem;
+        gap: 2.5rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s ease;
+    }
+    .main-nav.active {
+        right: 0;
+    }
+    .main-nav a {font-size: 1.8rem;}
+    .menu-btns {display: block;}
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+    .site-header {top: 1rem;}
+    .site-header {border-radius: 3rem;}
+}
