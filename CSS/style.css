@@ -418,7 +418,7 @@
     .service-wrapper {gap: 1rem;}
     .srv-card {
         flex: 0 0 calc((100% - 2 * 1rem) / 3);
-        min-height: 18rem;
+        min-height: 22rem;
     }
 }
 
