@@ -166,6 +166,74 @@ function initServiceSlider() {
     startAutoScroll();
 }
 
+function initProjectSlider() {
+    // 1. SELECT ELEMENTS
+    const container = document.querySelector('.project-cards'); // The scrollable area
+    const wrapper = document.querySelector('.project-wrapper');
+    const cards = document.querySelectorAll('.prj-card');
+    const prevBtn = document.querySelector('.prj-prev');
+    const nextBtn = document.querySelector('.prj-nxt');
+    const indexDisplay = document.querySelector('.prj-index');
+    
+    // Optional: Update the total count (the "8") dynamically based on actual cards
+    const countContainer = document.querySelector('.count');
+    if (countContainer && cards.length > 0) {
+        // Re-render the count to ensure the total number is correct
+        countContainer.innerHTML = `<span class="prj-index">1</span> - ${cards.length}`;
+        // Re-select the index span after updating HTML
+        const newIndexDisplay = document.querySelector('.prj-index'); 
+    }
+
+    let currentIndex = 0;
+
+    // 2. HELPER: GET CARD WIDTH + GAP
+    function getCardScrollWidth() {
+        const card = cards[0];
+        // Get the gap from the wrapper's CSS (flex gap)
+        const gap = parseFloat(getComputedStyle(wrapper).gap) || 20; 
+        return card.offsetWidth + gap;
+    }
+
+    // 3. MAIN SCROLL FUNCTION
+    function scrollToCard(index) {
+        // Loop logic: If we go past the end, go to start. If we go before start, go to end.
+        if (index >= cards.length) {
+            index = 0; 
+        } else if (index < 0) {
+            index = cards.length - 1;
+        }
+
+        currentIndex = index;
+
+        // Calculate pixel position
+        const scrollAmount = currentIndex * getCardScrollWidth();
+        
+        // Perform the scroll
+        container.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+
+        // Update the counter text (e.g., change "1" to "2")
+        const currentSpan = document.querySelector('.prj-index');
+        if (currentSpan) {
+            currentSpan.textContent = currentIndex + 1;
+        }
+    }
+
+    // 4. EVENT LISTENERS (Buttons Only)
+    nextBtn.addEventListener('click', () => {
+        scrollToCard(currentIndex + 1);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        scrollToCard(currentIndex - 1);
+    });
+
+    // Initialize counter on load
+    const initSpan = document.querySelector('.prj-index');
+    if(initSpan) initSpan.textContent = 1;
+}
 
 
 
@@ -175,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Menu();
     sectorUpdate();
     initServiceSlider();
+    initProjectSlider();
 
 
 });
