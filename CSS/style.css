@@ -407,7 +407,7 @@
     
 
 
-    .sector-wrapper {height: 33rem;}
+    .sector-wrapper {height: 18rem;}
     .service-header {grid-template-columns: 1fr;
         gap: 0.6;}  
     .service-wrapper {gap: 1rem;}
