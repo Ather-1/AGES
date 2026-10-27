@@ -418,7 +418,7 @@
     .service-wrapper {gap: 1rem;}
     .srv-card {
         flex: 0 0 calc((100% - 2 * 1rem) / 3);
-        min-height: 22rem;
+        min-height: 29rem;
     }
 }
 
@@ -448,16 +448,14 @@
     .sector-txt {padding: 1.2rem;}
     .sector-pnt {
         gap: 0.4rem;
-         margin-left: 1.4rem;
+        margin-left: 1.4rem;
     }
-    .service-wrapper {gap: 0.6rem;}
-    .srv-card {flex: 0 0 calc((100% - 1 * 0.6rem) / 2);}
 
-    
-    
-    
-    
-    
+    .service-wrapper {gap: 0.6rem;}
+    .srv-card {
+        flex: 0 0 calc((100% - 1 * 0.6rem) / 2);
+        min-height: 26rem;
+    }
     
     
 }
