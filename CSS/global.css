@@ -61,8 +61,10 @@ h3 {
     font-weight: 600;
 }
 h4 {
-    font-size: 3.6rem;
-    font-weight: 500;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 1px;
 }
 
 p {
@@ -117,21 +119,25 @@ p {
     .LRP {max-width: 1200px;}
     h2 {font-size: 3.6rem;}
     h3 {font-size: 3rem;}
+    h4 {font-size: 2.2rem;}
     li {font-size: 1.2rem;}
-    p {font-size: 1.4rem;}
-}
-
+    p {font-size: 1.4rem;
+        line-height: 1.6;}
+    }
+    
 @media (max-width:991px){
     h2 {font-size: 2.8rem;}
     h3 {font-size: 2.6rem;}
-    p {font-size: 1.3rem;}
+    h4 {font-size: 2rem;}
+    p {font-size: 1.3rem;
+       line-height: 1.5;}
 }
 
 @media (max-width: 576px) {
     h2 {font-size: 2.2rem;}
     h3 {font-size: 2rem;}
-    p {font-size: 1.2rem;
-       line-height: 1.5;}
+    h4 {font-size: 1.8rem;}
+    p {font-size: 1.2rem;}
     li {font-size: 1rem;
         letter-spacing: 0.05rem;}
     .section-label {font-size: 1.3rem;}

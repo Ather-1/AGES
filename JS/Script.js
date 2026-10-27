@@ -86,11 +86,95 @@ function sectorUpdate () {
     startAutoRotate();
 }
 
+function initServiceSlider() {
+    // ─── SELECT ELEMENTS ───
+    const container  = document.querySelector('.service-cards');
+    const wrapper    = document.querySelector('.service-wrapper');
+    const prevBtn    = document.querySelector('.srv-prev');
+    const nextBtn    = document.querySelector('.srv-nxt');
+    const cards      = document.querySelectorAll('.srv-card');
+
+    let autoScrollInterval;
+    let currentIndex = 0;
+
+    // ── GET SINGLE CARD SCROLL WIDTH (card + gap) ───
+    function getCardScrollWidth() {
+        const card = cards[0];
+        const gap  = parseFloat(getComputedStyle(wrapper).gap) || 12; // 1.2rem ≈ 19.2px
+        return card.offsetWidth + gap;
+    }
+
+    // ─── CALCULATE MAX INDEX (so we don't scroll past last card) ───
+    function getMaxIndex() {
+        const visibleCards = 5; // your CSS shows 5 cards visible
+        return Math.max(0, cards.length - visibleCards);
+    }
+
+    // ─── SCROLL TO A SPECIFIC CARD INDEX ───
+    function scrollToCard(index) {
+        // Loop back to start if we go past the end
+        if (index > getMaxIndex()) index = 0;
+        // Loop to end if we go before start
+        if (index < 0) index = getMaxIndex();
+
+        currentIndex = index;
+        const scrollAmount = index * getCardScrollWidth();
+
+        container.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+
+    // ─── NEXT CARD (forward by 1 card width) ───
+    function nextCard() {
+        scrollToCard(currentIndex + 1);
+    }
+
+    // ── PREVIOUS CARD (backward by 1 card width) ───
+    function prevCard() {
+        scrollToCard(currentIndex - 1);
+    }
+
+    // ─── AUTO SCROLL EVERY 3 SECONDS ───
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(nextCard, 2500);
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+
+    // ─── BUTTON EVENT LISTENERS ──
+    nextBtn.addEventListener('click', () => {
+        stopAutoScroll();   // stop auto-scroll on manual click
+        nextCard();
+        startAutoScroll();  // restart after click
+    });
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        prevCard();
+        startAutoScroll();
+    });
+
+    // ─── PAUSE AUTO-SCROLL ON HOVER ───
+    container.addEventListener('mouseenter', stopAutoScroll);
+    container.addEventListener('mouseleave', startAutoScroll);
+
+    // ─── START THE SLIDER ───
+    startAutoScroll();
+}
+
+
+
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
     Menu();
     sectorUpdate();
+    initServiceSlider();
+
 
 });
