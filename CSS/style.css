@@ -370,10 +370,12 @@
     .Sector {padding: 5rem 0;}
     .sector-list {padding: 1rem 3rem 1rem 0.8rem;}
     .sector-item {padding: 0.8rem;}
-
-    .service-container {gap: 1rem;}
     .sector-wrapper {height: 38rem;}
+    
 
+
+    .Services {padding: 5rem 0;}
+    .service-container {gap: 1rem;}
     .srv-card {
         flex: 0 0 calc((100% - 3 * 1rem) / 4);
         min-height: 38rem;
@@ -407,11 +409,17 @@
     
 
 
-    .sector-wrapper {height: 18rem;}
-    .service-header {grid-template-columns: 1fr;
-        gap: 0.6;}  
+    .service-header {
+        grid-template-columns: 1fr;
+        gap: 0.6;
+    }  
+
+
     .service-wrapper {gap: 1rem;}
-    .srv-card {flex: 0 0 calc((100% - 2 * 1rem) / 3);}
+    .srv-card {
+        flex: 0 0 calc((100% - 2 * 1rem) / 3);
+        min-height: 38rem;
+    }
 }
 
 
