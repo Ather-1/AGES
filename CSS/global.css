@@ -38,6 +38,12 @@ a {
     font-size: 1.6rem;
     font-weight: 600;
 }
+li {
+    list-style: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+}
 
 /*================================*/
 h1 {
@@ -52,7 +58,7 @@ h2 {
 }
 h3 {
     font-size: 3.2rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 h4 {
     font-size: 3.6rem;
@@ -69,11 +75,11 @@ p {
 
 .section-label {
     display: inline-block;
-    margin-bottom: 2rem;
     color: #f57c00;
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.5px;
+    /* margin-bottom: 2rem; */
 }
 
 .btn-link {
@@ -104,6 +110,32 @@ p {
 
 .btn-link:hover {color: var(--hover);}
 .btn-link:hover .barr {transform: translateX(8px);}
+
+
+
+@media (max-width: 1400px) {
+    .LRP {max-width: 1200px;}
+    h2 {font-size: 3.6rem;}
+    li {font-size: 1.2rem;}
+}
+
+@media (max-width:991px){
+    h2 {font-size: 2.8rem;}
+    h3 {font-size: 2.6rem;}
+}
+
+@media (max-width: 576px) {
+    h2 {font-size: 2.2rem;}
+    h3 {font-size: 2rem;}
+    li {font-size: 1rem;
+        letter-spacing: 0.05rem;}
+    .section-label {font-size: 1.3rem;}
+}
+
+
+
+
+
 
 
 /* <span class="section-label">How It Started</span> */
