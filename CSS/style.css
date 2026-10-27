@@ -290,10 +290,10 @@
 
 
 @media (max-width:576px) {
-    .about-img{height: 28rem;}
+    .about-img{height: 22rem;}
     
     .sector-content {gap: 1rem;}
-    .sector-wrapper {height: 25rem;}
+    .sector-wrapper {height: 22rem;}
     .sector-txt {padding: 1.2rem;}
     .sector-pnt {gap: 0.4rem;
                 margin-left: 1.4rem;}
