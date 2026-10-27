@@ -79,7 +79,7 @@ p {
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    /* margin-bottom: 2rem; */
+    padding-left: 0.3rem;
 }
 
 .btn-link {
@@ -116,17 +116,21 @@ p {
 @media (max-width: 1400px) {
     .LRP {max-width: 1200px;}
     h2 {font-size: 3.6rem;}
+    h3 {font-size: 3rem;}
     li {font-size: 1.2rem;}
+    p {font-size: 1.4rem;}
 }
 
 @media (max-width:991px){
     h2 {font-size: 2.8rem;}
     h3 {font-size: 2.6rem;}
+    p {font-size: 1.3rem;}
 }
 
 @media (max-width: 576px) {
     h2 {font-size: 2.2rem;}
     h3 {font-size: 2rem;}
+    p {font-size: 1.2rem;}
     li {font-size: 1rem;
         letter-spacing: 0.05rem;}
     .section-label {font-size: 1.3rem;}
