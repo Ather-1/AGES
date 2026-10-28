@@ -235,6 +235,108 @@ function initProjectSlider() {
     if(initSpan) initSpan.textContent = 1;
 }
 
+function initPeopleCards() {
+    // ─── SELECT ELEMENTS ───
+    const cards = document.querySelectorAll('.people-card');
+
+    const detailImg = document.querySelector('.people-detail .people-img img');
+    const detailBio = document.querySelector('.people-detail .people-name p');
+    const detailName = document.querySelector('.people-detail .people-name h5');
+    const detailJob = document.querySelector('.people-detail .job-title');
+
+    // ─── DATA FOR ALL 7 PEOPLE ───
+    // Update image paths, names, jobs, and bios for each person
+    const peopleData = [
+        {
+            img: "Assets/Profile/Founding/01-Nasir-ul-Mulk.jpeg",
+            name: "Engr. Nasir-ul-Mulk",
+            job: "Managing Partner",
+            bio: "After getting bachelor's degree in Civil Engineering with Honours in 1994, Mr. Nasir successfully completed his M.Sc. Civil Engineering from UET Peshawar. Concurrently, he worked on the planning, designing, tender documents preparation and tender evaluation for a no. of Infrastructure and Water Sector Projects both within the country and abroad."
+        },
+        {
+            img: "Assets/Profile/Founding/02-Aziz-ul-Haq.jpeg",
+            name: "Engr. Aziz-ul-Haq",
+            job: "Partner",
+            bio: "Having got his B.Sc. degree in Civil Engineering with Honours in 1994, Mr. Aziz successfully completed his M.Sc. Civil Engineering from UET Peshawar. He displayed admirable role in the design, management and implementation of different engineering projects funded by the USAID."
+        },
+        {
+            img: "Assets/Profile/Founding/03-Zahoor-Ahmed.jpeg",
+            name: "Engr. Zahoor Ahmed",
+            job: "Partner",
+            bio: "A well-known Irrigation, Hydraulics and Hydropower designer in the row of consulting engineers, with a practical background experience since 1995, Mr. Zahoor worked on feasibility studies, planning, designing, tender documents preparation, PBME, O&M and design manuals preparation for a no. of projects at national and international levels. "
+        },
+        {
+            img: "Assets/Profile/Founding/04-Rahat-Ali.jpeg",
+            name: "Engr. Rahat Ali",
+            job: "Partner",
+            bio: "After completion of his B. Sc. Civil Engineering degree in 1995, Mr. Rahat completed his M. Sc. Civil Engineering from UET Peshawar. His main area has been Water Sector with expertise in surveying and setting out of various structures and facilities associated with irrigation, hydropower, roads, tunnels, buildings and infrastructure."
+        },
+        {
+            img: "Assets/Profile/Founding/05-Alamgir-Khan.jpeg",
+            name: "Engr. Alamgir Khan",
+            job: "Partner",
+            bio: "Mr. Alamgir graduated in 1988 as Mining Engineer and subsequently got a master degree in Rock Mechanics from UET Peshawar. He accomplished various projects covering all relevant aspects including Geo-technical and Geological Surveys for Underground as well as Surface Geology."
+        },
+        {
+            img: "Assets/Profile/Founding/06-Tariq-Khurshid.jpg",
+            name: "Engr. Tariq Khurshid",
+            job: "Partner",
+            bio: "With a B.Sc. degree in Civil Engineering in 1994, and successful completion of his M.Sc. Civil Engineering, Mr. Tariq diligently applied his managerial potential and technical experience to get AGES projects completed at no less level than a satisfied client."
+        },
+        {
+            img: "Assets/Profile/Founding/07-Mukhtar-Muhammad.jpeg",
+            name: "Engr. Mukhtar Muhammad",
+            job: "Partner",
+            bio: "Working since 1995, with a bachelor degree in Civil Engineering and masters in Construction Management, Mr. Mukhtar‘s field of interest has been GIS Cartography wherein he delivered excellent services to the Department for International Development (DFID) / British Council, GTZ and the World Bank."
+        }
+    ];
+
+    // ─── UPDATE LEFT DETAIL SECTION ───
+    function updateDetail(index) {
+        const person = peopleData[index];
+        if (!person) return;
+
+        // Update image
+        detailImg.src = person.img;
+
+        // Update text content
+        detailName.textContent = person.name;
+        detailJob.textContent = person.job;
+        detailBio.textContent = person.bio;
+    }
+
+    // ─── SET ACTIVE CARD (highlight clicked one) ───
+    function setActiveCard(index) {
+        // Remove 'active' from all cards
+        cards.forEach(card => card.classList.remove('active'));
+
+        // Add 'active' to clicked card
+        if (cards[index]) {
+            cards[index].classList.add('active');
+
+            // Scroll card into view (smooth)
+            cards[index].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+    }
+
+    // ─── CLICK HANDLER FOR EACH CARD ───
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            setActiveCard(index);
+            updateDetail(index);
+        });
+    });
+
+    // ─── INITIALIZE FIRST CARD ON LOAD ───
+    setActiveCard(0);
+    updateDetail(0);
+}
+
+
+
 
 
 
@@ -244,6 +346,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sectorUpdate();
     initServiceSlider();
     initProjectSlider();
-
+    initPeopleCards();
 
 });
