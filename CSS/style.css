@@ -530,7 +530,7 @@
 
 
 .people-cards {
-    border: 1px dashed rgba(0, 0, 255, 0.175);
+    border: 1px solid rgba(0, 0, 0, 0.4);
     height: 50rem;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -676,13 +676,23 @@
         grid-template-columns: 1fr;
         display: flex;
         flex-direction: column-reverse;
-        gap: 1rem;
+        gap: 2.5rem;
     }
-    .people-img {height: 29rem;}
-    .people-name {padding: 1.2rem;}
+    .people-img {
+        height: 26rem;
+        width: 100%;
+    }
+    .people-name {
+        height: 20rem;
+        padding: 1.2rem;
+    }
     .people-cards {
         height: 32rem;
         width: 100%;
+    }
+    .people-detail {
+        display: flex;
+        flex-direction: column;
     }
     .people-img2 {height: 6.6rem;}
 
