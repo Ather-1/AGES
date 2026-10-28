@@ -237,10 +237,10 @@
 .section-label {
     margin-bottom: 1.6rem;
 }
-.service-description p {
+/* .service-description p {
     border-left: 3px solid var(--dark);
     padding-left: 0.5rem;
-}
+} */
 
 
 .service-cards {
@@ -361,7 +361,7 @@
 
 .Projects {
     padding: 8rem 0;
-    border: 1px solid black;
+    background-color: var(--bg-dark);
 }
 .project-container {
     display: grid;
@@ -373,11 +373,16 @@
 .project-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
     gap: 1rem;
     height: 100%;
     padding: 1.2rem;
+    color: var(--light);
 }
+.project-content p{
+    color: rgb(181, 181, 181);
+}
+
 .project-controls {
     display: flex;
     align-items: center;
