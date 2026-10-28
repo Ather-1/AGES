@@ -18,6 +18,7 @@
 
 .About {
     padding: 8rem 0;
+    border-top: 1px solid #c6c6c6;
 }
 .about-container {
     display: grid;
@@ -92,6 +93,7 @@
 
 .Sector {
     padding: 8rem 0;
+    border-top: 1px solid #c6c6c6;
 }
 
 .sector-header {
@@ -219,7 +221,7 @@
 
 .Services {
     padding: 8rem 0;
-    border: 1px solid black;
+    border-top: 1px solid #c6c6c6;
 }
 .service-container {
     display: flex;
@@ -418,8 +420,9 @@
     cursor: pointer;
     padding: 1.2rem;
     border-radius: 1.2rem 0 0 1.2rem;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3),
-                -4px -4px 15px var(--light);
+    box-shadow: 4px 4px 15px rgba(137, 137, 137, 0.3),
+                -2px -2px 20px var(--dark);
+                background-color: var(--bg-light);
 
 }
 .project-wrapper {
@@ -677,6 +680,7 @@
     .project-cards {padding: 0.8rem;}
     .project-wrapper {gap: 0.8rem;}
     .prj-card {min-height: 29rem;}
+    .prj-name {padding: 1rem;}
 
 
 
