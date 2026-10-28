@@ -88,6 +88,15 @@ p {
     letter-spacing: 0.5px;
     padding-left: 0.3rem;
 }
+.section-label::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: #f57c00;
+    margin-top: 1px;
+}
+
 .job-title {
     font-size: 1.4rem;
     font-weight: 500;
